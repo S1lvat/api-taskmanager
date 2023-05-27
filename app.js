@@ -5,6 +5,7 @@ const routes = require('./routes/routes.js')
 
 require('dotenv').config()
 
+app.use(express.json())
 
 // routes
 app.use(routes)
