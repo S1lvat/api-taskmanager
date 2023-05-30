@@ -5,6 +5,10 @@ const routes = require('./routes/routes.js')
 
 require('dotenv').config()
 
+// arquivos estaticos
+app.use(express.static('./public'));
+
+// body parser
 app.use(express.json())
 
 // routes

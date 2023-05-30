@@ -7,8 +7,12 @@ const createTask = async (req, res) => {
 }
 
 const getAllTasks = async (req, res) => {
-    const tasks = await TaskDB.find()
-    res.status(200).json(tasks)
+    try{
+        const tasks = await TaskDB.find()
+        res.status(200).json(tasks)
+    } catch (e) {
+        console.log(e)
+    }
 }
 
 const getSingleTask = async (req, res) => {
