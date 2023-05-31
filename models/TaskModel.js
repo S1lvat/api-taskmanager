@@ -2,9 +2,15 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 const taskSchema = new Schema({
-    name: String,
-    description: String,
-    completed: Boolean
+    name: {
+        type: String,
+        maxlength: 20,
+        // required: [true, 'Task must have a name!']
+    },
+    completed: {
+        type: Boolean,
+        default: false,
+    }
 },{
     collection: 'Tasks',
 })
